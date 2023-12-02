@@ -33,9 +33,12 @@ const ContentSecurityPolicy = `
     style-src 'self' 'unsafe-inline';
     img-src * blob: data:;
     media-src 'none';
-    connect-src 'self' vitals.vercel-insights.com;
+    connect-src *;
     font-src 'self' data:;
 `;
+
+// FIXME: insights 404
+// connect-src 'self' vitals.vercel-insights.com;
 
 const securityHeaders = [
   {

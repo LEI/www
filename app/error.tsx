@@ -16,7 +16,12 @@ export default function Error({
 
   return (
     <div>
-      <p>Oh no, something went wrong... maybe refresh?</p>
+      {/*<p>Oh no, something went wrong... maybe refresh?</p>*/}
+      <h2>Oops, there is an error!</h2>
+      <p>Name: {error.name}</p>
+      <p>Cause: {JSON.stringify(error.cause)}</p>
+      <p>Message: {error.message}</p>
+      <pre>{error.stack}</pre>
     </div>
   );
 }
