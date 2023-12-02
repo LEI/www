@@ -12,6 +12,7 @@ import 'server-only';
 export type CustomResumeSchema = ResumeSchema & {
   basics?: {
     headline?: string;
+    locationAsString?: string;
   };
 };
 
@@ -37,7 +38,7 @@ export class Resume {
    * Fetch JSON resume from the given URL.
    */
   async fetch(url: string): Promise<CustomResumeSchema> {
-    console.debug('Fetching URL', url);
+    console.debug('Fetching resume schema URL', url);
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error('Failed to fetch resume');
@@ -46,13 +47,13 @@ export class Resume {
   }
 
   async write(schema: CustomResumeSchema): Promise<void> {
-    console.debug('Writing file', this.localFile);
+    console.debug('Writing resume schema file:', this.localFile);
     await fs.writeFile(this.localFile, JSON.stringify(schema), 'utf8');
     this.schema = schema;
   }
 
   async read(): Promise<CustomResumeSchema> {
-    console.debug('Reading file', this.localFile);
+    console.debug('Reading resume schema file:', this.localFile);
     const buffer = await fs.readFile(this.localFile, 'utf8');
     this.schema = JSON.parse(buffer.toString());
     return this.schema;
@@ -62,10 +63,13 @@ export class Resume {
     if (!url) {
       throw new Error('Missing RESUME_URL');
     }
+    if (this.schema) {
+      return this.schema;
+    }
     try {
       await this.read();
     } catch (err) {
-      console.error(err);
+      console.warn('Failed to read schema file:', err);
       const schema = await resume.fetch(url);
       await this.write(schema);
     }

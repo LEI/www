@@ -10,8 +10,9 @@ export default function UsesPage() {
   return (
     <section>
       <h1 className="font-medium text-2xl mb-8 tracking-tighter">
-        here's my setup
+        WIP
       </h1>
+      {/*
       <div className="prose prose-neutral dark:prose-invert">
         <h3 id="computer-office">Computer / Office</h3>
         <ul>
@@ -75,6 +76,7 @@ export default function UsesPage() {
           <li>Tesla Model 3</li>
         </ul>
       </div>
+      */}
     </section>
   );
 }

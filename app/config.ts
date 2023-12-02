@@ -32,7 +32,7 @@ export class Config {
   /**
    * Website title.
    */
-  title = process.env.TITLE || 'Title';
+  title = process.env.TITLE || 'Welcome';
 
   /**
    * Main description.

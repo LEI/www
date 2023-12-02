@@ -14,9 +14,13 @@ export default function BlogPage() {
 
   return (
     <section>
-      <h1 className="font-medium text-2xl mb-8 tracking-tighter">
-        read my blog
+      <h1 className="font-medium text-2xl mb-2 tracking-tighter">
+        Bloop
       </h1>
+      <p className="mb-8 text-neutral-600 dark:text-neutral-400 text-sm">
+        Under construction
+      </p>
+
       {allBlogs
         .sort((a, b) => {
           if (
