@@ -1,6 +1,6 @@
 // https://github.com/leerob/leerob.io/blob/main/app/work/page.tsx
 import type { Metadata } from 'next';
-import Link from 'next/link';
+// import Link from 'next/link';
 import { resume } from '../resume';
 import { Badge } from '../components/badge';
 

@@ -9,8 +9,9 @@ export const metadata = {
 };
 
 export default async function AdminPage() {
+  console.log('Trying auth...');
   let session = await auth();
-  console.log('Page', session?.user, config.baseUrl);
+  console.log('Page auth:', session?.user, config.baseUrl);
   if (session?.user?.email?.endsWith(config.baseUrl.replace('https://', '@'))) {
     redirect('/');
   }
