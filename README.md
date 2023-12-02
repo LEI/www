@@ -2,6 +2,8 @@
 
 # www
 
+Based on and inspired by [leerob.io](https://github.com/leerob/leerob.io/).
+
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Database**: [Postgres](https://vercel.com/postgres)
 - **Authentication**: [NextAuth.js](https://next-auth.js.org)
@@ -16,6 +18,7 @@ This application requires Node.js v18.17+.
 ```bash
 git clone https://github.com/LEI/wwww.git
 cd www
+cp .env.example .env.local
 pnpm install
 pnpm dev
 ```

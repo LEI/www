@@ -2,62 +2,87 @@
  * Global configuration.
  */
 export class Config {
-    /**
-     * External domain name.
-     */
-    domain = process.env.DOMAIN || 'localhost'
+  /**
+   * Default protocol if BASE_URL is unspecified.
+   */
+  protocol = process.env.HOST || 'http'
 
-    /**
-     * Website title.
-    /**
-     * Application base URL.
-     */
-    baseUrl = process.env.BASE_URL || 'http://localhost:3000'
+  /**
+   * Internal host name or IP address.
+   */
+  host = process.env.HOST || 'localhost'
 
-    /**
-     * Website title.
-     */
-    title = process.env.TITLE || 'Title';
+  /**
+   * Internal port number.
+   */
+  port = process.env.PORT || '3000'
 
-    /**
-     * Main description.
-     */
-    description = process.env.DESCRIPTION || '';
+  /**
+   * Application external URL.
+   */
+  get baseUrl() {
+    const baseUrl = process.env.BASE_URL;
+    if (baseUrl) {
+      return baseUrl;
+    }
 
-    /**
-     * GitHub OAuth client key.
-     */
-    githubClientKey = process.env.OAUTH_CLIENT_KEY || '';
+    return `${this.protocol}://${this.host}:${this.port}`;
+  }
 
-    /**
-     * GitHub OAuth client secret.
-     */
-    githubClientSecret = process.env.OAUTH_CLIENT_SECRET || '';
+  /**
+   * Website title.
+   */
+  title = process.env.TITLE || 'Title';
 
-    /**
-     * Resend secret.
-     */
-    resendSecret = process.env.RESEND_SECRET;
+  /**
+   * Main description.
+   */
+  description = process.env.DESCRIPTION;
 
-    /**
-     * Google client email.
-     */
-    googleClientEmail = process.env.GOOGLE_CLIENT_EMAIL;
+  /**
+   * Address to send guestbook from.
+   */
+  guestbookFromEmail = process.env.GUESTBOOK_FROM_EMAIL;
 
-    /**
-     * Google private key.
-     */
-    googlePrivateKey = process.env.GOOGLE_PRIVATE_KEY;
-    
-    /**
-     * Google verification.
-     */
-    google?: string;
+  /**
+   * Address to send guestbook to.
+   */
+  guestbookToEmail = process.env.GUESTBOOK_TO_EMAIL;
 
-    /**
-     * Yandex verification.
-     */
-    yandex?: string;
+  /**
+   * GitHub OAuth client key.
+   */
+  githubClientKey = process.env.OAUTH_CLIENT_KEY;
+
+  /**
+   * GitHub OAuth client secret.
+   */
+  githubClientSecret = process.env.OAUTH_CLIENT_SECRET;
+
+  /**
+   * Resend secret.
+   */
+  resendSecret = process.env.RESEND_SECRET;
+
+  /**
+   * Google client email.
+   */
+  googleClientEmail = process.env.GOOGLE_CLIENT_EMAIL;
+
+  /**
+   * Google private key.
+   */
+  googlePrivateKey = process.env.GOOGLE_PRIVATE_KEY;
+
+  /**
+   * Google verification.
+   */
+  google?: string;
+
+  /**
+   * Yandex verification.
+   */
+  yandex?: string;
 }
 
 export const config = new Config();
