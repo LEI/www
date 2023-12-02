@@ -39,6 +39,9 @@ export class Resume {
   async fetch(url: string): Promise<CustomResumeSchema> {
     console.debug('Fetching URL', url);
     const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('Failed to fetch resume');
+    }
     return response.json();
   }
 
