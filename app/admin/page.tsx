@@ -8,8 +8,9 @@ export const metadata = {
   title: 'Admin',
 };
 
-export default async function GuestbookPage() {
+export default async function AdminPage() {
   let session = await auth();
+  console.log('Page', session?.user, config.baseUrl);
   if (session?.user?.email?.endsWith(config.baseUrl.replace('https://', '@'))) {
     redirect('/');
   }
