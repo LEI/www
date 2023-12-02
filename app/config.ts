@@ -40,6 +40,12 @@ export class Config {
   description = process.env.DESCRIPTION;
 
   /**
+   * Standard resume URL.
+   */
+  resumeUrl = process.env.RESUME_URL;
+
+
+  /**
    * Address to send guestbook from.
    */
   guestbookFromEmail = process.env.GUESTBOOK_FROM_EMAIL;

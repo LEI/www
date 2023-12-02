@@ -72,6 +72,11 @@ dependencies:
     specifier: 5.3.2
     version: 5.3.2
 
+devDependencies:
+  '@kurone-kito/jsonresume-types':
+    specifier: ^0.4.0
+    version: 0.4.0
+
 packages:
 
   /@alloc/quick-lru@5.2.0:
@@ -155,6 +160,11 @@ packages:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: false
+
+  /@kurone-kito/jsonresume-types@0.4.0:
+    resolution: {integrity: sha512-bylwUUz3tLXUccUUFCo2IjGvAaTOl6xb6EBnJrb5huIzs1vL6UCWQD7gw6Btulz7ID8HOSIO8+ZtNWHwzhVTKA==}
+    engines: {node: '>=16.20'}
+    dev: true
 
   /@mdx-js/mdx@2.3.0:
     resolution: {integrity: sha512-jLuwRlz8DQfQNiUCJR50Y09CGPq3fLtmtUQfVrj79E0JWu3dvsVcxVIcfhR5h0iXu+/z++zDrYeiJqifRynJkA==}

@@ -29,5 +29,8 @@
     "swr": "^2.2.4",
     "tailwindcss": "^3.3.5",
     "typescript": "5.3.2"
+  },
+  "devDependencies": {
+    "@kurone-kito/jsonresume-types": "^0.4.0"
   }
 }
