@@ -35,7 +35,7 @@ export class Config {
   title = process.env.TITLE || 'Welcome';
 
   /**
-   * Main description.
+   * Meta description.
    */
   description = process.env.DESCRIPTION;
 

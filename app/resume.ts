@@ -10,9 +10,10 @@ import 'server-only';
  * @see https://gitconnected.com/portfolio-api
  */
 export type CustomResumeSchema = ResumeSchema & {
-  basics?: {
+  basics?: ResumeSchema['basics'] & {
     headline?: string;
     locationAsString?: string;
+    region?: string;
   };
 };
 

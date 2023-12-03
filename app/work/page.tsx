@@ -17,7 +17,7 @@ export default async function Page() {
         {data.basics?.label}
       </h1>
       <p className="mb-8 text-neutral-600 dark:text-neutral-400 text-sm">
-        <i>{data.basics?.locationAsString}</i>
+        <i>{data.basics?.region}</i>
       </p>
 
       <div className="prose prose-neutral dark:prose-invert">
