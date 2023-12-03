@@ -1,10 +1,20 @@
 {
   "private": true,
+  "git": {
+    "pre-commit": [
+      "lint",
+      "test"
+    ]
+  },
   "scripts": {
     "clean": "rm resume.json",
     "dev": "next dev --turbo",
     "build": "next build",
+    "lint": "next lint",
+    "prettier": "prettier",
+    "prettier:check": "prettier --check .",
     "start": "next start",
+    "test": "echo TODO",
     "setup": "node ./setup.mjs"
   },
   "dependencies": {
@@ -34,6 +44,9 @@
   },
   "devDependencies": {
     "@kurone-kito/jsonresume-types": "^0.4.0",
+    "@vercel/git-hooks": "^1.0.0",
+    "eslint": "8.55.0",
+    "eslint-config-next": "14.0.3",
     "prettier": "^3.1.0"
   }
 }
