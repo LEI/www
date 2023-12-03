@@ -2,9 +2,7 @@ import { withSentryConfig } from '@sentry/nextjs';
 import { sql } from '@vercel/postgres';
 
 const nextConfig = {
-  experimental: {
-    ppr: true,
-  },
+  // experimental: { ppr: true },
   async redirects() {
     const { rows: redirects } = await sql`
       SELECT source, destination, permanent
