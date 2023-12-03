@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const navItems = {
   '/': {
-    name: 'Home',
+    name: 'Home', // FIXME: dynamic config.title
   },
   '/work': {
     name: 'Work',

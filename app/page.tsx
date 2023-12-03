@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { config } from './config';
 import { resume } from './resume';
 import { Badge } from './components/badge';
 
@@ -10,7 +11,7 @@ export default async function Page() {
         {data.basics?.name}
         {typeof data.basics?.url === 'string' ?
           <Link href={data.basics?.url} className="ml-2 text-neutral-600 dark:text-neutral-400 text-sm">
-            {data.basics?.url?.replace('https://', '')}
+            {config.title || data.basics?.url?.replace('https://', '')}
           </Link>
           : ''}
       </h1>
